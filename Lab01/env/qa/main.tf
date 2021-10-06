@@ -18,7 +18,7 @@ variable "linux-password" {}
 
 module "linux-server" {
   source           = "../../modules/servers"
-  linux-password   = "${var.linux-password}"
+  linux-password   = var.linux-password
   linux-user       = "adminqa"
   environment      = "qa"
   cantidad-servers = 2

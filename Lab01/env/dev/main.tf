@@ -8,10 +8,10 @@ terraform {
     }
   }
   backend "azurerm" {
-    resource_group_name = "infra-control-rg"
+    resource_group_name  = "infra-control-rg"
     storage_account_name = "iacucreativa"
-    container_name = "tfstate"
-    key = "dev.tfstate"
+    container_name       = "tfstate"
+    key                  = "dev.tfstate"
   }
 }
 

@@ -45,7 +45,7 @@ resource "azurerm_network_interface" "nic" {
 }
 
 resource "azurerm_virtual_machine" "vm" {
-  count = var.cantidad-servers
+  count                 = var.cantidad-servers
   name                  = "${local.prefix}-${var.environment}-iacvm${count.index}"
   location              = azurerm_resource_group.patito.location
   resource_group_name   = azurerm_resource_group.patito.name
@@ -81,7 +81,7 @@ resource "azurerm_virtual_machine" "vm" {
 }
 
 resource "azurerm_public_ip" "publicip" {
-  count = var.cantidad-servers
+  count               = var.cantidad-servers
   name                = "${local.prefix}-${var.environment}iacpublicip${count.index}"
   location            = azurerm_resource_group.patito.location
   resource_group_name = azurerm_resource_group.patito.name
@@ -143,7 +143,7 @@ resource "azurerm_network_security_rule" "rule03" {
 }
 
 resource "azurerm_network_interface_security_group_association" "sgassociation" {
-  count = var.cantidad-servers
+  count                     = var.cantidad-servers
   network_interface_id      = azurerm_network_interface.nic[count.index].id
   network_security_group_id = azurerm_network_security_group.iacsecgroup.id
 }

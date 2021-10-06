@@ -4,7 +4,7 @@ variable "name" {
 }
 
 variable "resource-group" {
-  type    = string
+  type = string
 }
 
 variable "location" {
