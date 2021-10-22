@@ -31,3 +31,4 @@ Lab01/.terraform.lock.hcl
 .DS_Store
 .azlogin
 *.hcl
+.awslogin
