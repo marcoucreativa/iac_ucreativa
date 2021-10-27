@@ -3,15 +3,15 @@ variable "environment" {
   default = "dev"
 }
 
-variable "linux-password" {
+variable "LINUX_PASSWORD" {
   type      = string
   sensitive = true
   validation {
-    condition     = length(var.linux-password) > 8
+    condition     = length(var.LINUX_PASSWORD) > 8
     error_message = "Password esta muy chiquito."
   }
   validation {
-    condition     = substr(var.linux-password, 0, 3) != "123"
+    condition     = substr(var.LINUX_PASSWORD, 0, 3) != "123"
     error_message = "No puede comenzar con 123."
   }
 }

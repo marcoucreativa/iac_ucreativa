@@ -14,11 +14,11 @@ provider "azurerm" {
   features {}
 }
 
-variable "linux-password" {}
+variable "LINUX_PASSWORD" {}
 
 module "linux-server" {
   source           = "../../modules/servers"
-  linux-password   = var.linux-password
+  LINUX_PASSWORD   = var.LINUX_PASSWORD
   linux-user       = "adminqa"
   environment      = "qa"
   cantidad-servers = 2

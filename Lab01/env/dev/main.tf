@@ -19,7 +19,7 @@ provider "azurerm" {
 
 module "linux-server" {
   source           = "../../modules/servers"
-  linux-password   = var.linux_password
+  LINUX_PASSWORD   = var.LINUX_PASSWORD
   linux-user       = "adminfrb03"
   environment      = "dev"
   cantidad-servers = 1

@@ -7,7 +7,7 @@ terraform {
   }
   backend "azurerm" {
     resource_group_name  = "infra-control-rg"
-    storage_account_name = "iacucreativa"
+    storage_account_name = "ucreativaiac"
     container_name       = "tfstate"
     key                  = "dev.tfstate"
   }
@@ -18,13 +18,9 @@ provider "azurerm" {
 }
 
 module "linux-server" {
-  source           = "../../modules/servers"
+  source           = "./Lab01/modules/servers"
   LINUX_PASSWORD   = var.LINUX_PASSWORD
   linux-user       = "adminfrb03"
   environment      = "dev"
   cantidad-servers = 1
-}
-
-module "aws-ec2" {
-    source = "../../modules/ec2"  
 }
