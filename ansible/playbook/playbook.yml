@@ -1,0 +1,7 @@
+---
+  - name: Mi Primer Play
+    hosts: dev
+    become: true
+    remote_user: adminfrb03
+    roles:
+      - linux-restart

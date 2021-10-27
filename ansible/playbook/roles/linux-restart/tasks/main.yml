@@ -1,0 +1,4 @@
+---
+# tasks file for linux-restart
+- name: Reiniciar el server
+  reboot: 
